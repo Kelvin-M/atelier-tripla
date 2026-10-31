@@ -17,6 +17,7 @@ footer { padding-top: 5rem; }
 .accueil h1 { align-self: end; }
 .accueil h1 img { width: min(24rem, 100vw - 3rem); }
 .accueil footer { align-self: end; padding-top: 0; }
+.accueil nav p { flex-basis: 100%; text-align: center; }
 
 /* Pages intérieures */
 header { display: grid; justify-items: center; gap: 2rem; padding-block: 1.5rem 4rem; }
@@ -36,3 +37,7 @@ article p:not(.meta) { max-width: 38rem; margin-inline: auto; }
 .texte dl { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.3rem 1rem; margin: 0; }
 .texte dt { color: #6f6c66; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 0.2rem; }
 .texte dd { margin: 0; }
+
+/* Fondu entre les pages, ignoré par les navigateurs qui ne le gèrent pas */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
